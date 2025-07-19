@@ -1,5 +1,5 @@
-let menuBtn = document.querySelector(".hamberger-menu-btn")
-let menuContent = document.querySelector(".hamberger-menu-content")
+let menuBtn = document.querySelector(".hamberger-menu-btn");
+let menuContent = document.querySelector(".hamberger-menu-content");
 let menuBtnReturn = document.querySelector(".hidden-menu-btn");
 let hiddenItem = document.querySelector(".hidden-item");
 let hiddenContent = document.querySelector(".hidden-dropdown");
@@ -8,7 +8,11 @@ let tabContent = document.querySelector(".dropdown-menu");
 let tabItem2 = document.querySelector(".another-tab-item");
 let tabContent2 = document.querySelector(".dropdown-menu2");
 let langBtn = document.querySelector(".bi-three-dots-vertical");
-let langContent = document.querySelector(".dropdown-text")
+let langContent = document.querySelector(".dropdown-text");
+
+
+
+
 menuBtn.addEventListener("click", function () {
   menuContent.style.display = "block";
   menuBtn.style.display = "none";
@@ -62,5 +66,39 @@ langBtn.addEventListener("click", function () {
   }
 })
 
+let slider = document.querySelectorAll(".app-row-body")
+slider.forEach(document => {
+  let prev = document.querySelector(".move-button-left");
+  let next = document.querySelector(".move-button-right");
+  let slide = document.querySelectorAll(".app-row-body-content div");
+  let slides = document.querySelector(".app-row-body-content");
+
+index = 0;
+
+let showSlides = (i) => {
+  if (i < 0) {
+    index = 0;
+  }
+  else if (i >= slide.length) {
+    index = 0;
+  }
+  else if (i > 5) {
+    index = 5;
+  }
+
+  else {
+    index = i;
+  }
+  slides.style.transform = `translatex(-${index * 10}rem)`
+}
 
 
+
+prev.addEventListener("click", () => {
+  showSlides(index - 1);
+});
+next.addEventListener("click", () => {
+  showSlides(index + 1);
+});
+showSlides(index);
+});
