@@ -392,7 +392,7 @@ header {
   min-height: 700px;
   text-align: center;
   margin-top: 4.3rem;
- 
+  white-space: nowrap;
 }
 
 .app-icons {
@@ -405,20 +405,34 @@ header {
   grid-template-columns: repeat(18, 1fr);
   margin-right: -1rem;
   width: 100%;
-  
+  ;
 
 
 }
 
 .app-item {
   padding: 0.5rem;
-  grid-column-start: auto;
-  
+
+
 
 }
 
+.app-icons :nth-child(n+43):nth-child(-n+48) {
+  visibility: hidden;
+}
+
+.app-icons :nth-child(n+59):nth-child(-n+68) {
+  visibility: hidden;
+}
+
+.app-icons :nth-child(n+76):nth-child(-n+87) {
+  visibility: hidden;
+}
+
+
 .app-icon {
   width: 100%;
+
 }
 
 
@@ -735,7 +749,7 @@ header {
   max-width: 40px;
   min-height: 40px;
   min-width: 40px;
- 
+
   padding: 0;
   z-index: 1;
   text-align: center;
@@ -765,8 +779,8 @@ header {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: repeat(1, 1fr);
-  transition:0.5s;
- 
+  transition: 0.5s;
+
 }
 
 .app-row-body-content div {
@@ -1050,7 +1064,7 @@ footer {
   display: none;
   width: 100%;
   flex-direction: row;
-   justify-content: space-around; 
+  justify-content: space-around;
   background-color: #fff;
   box-shadow: 1px -5px 5px #ccc;
   /* padding-top: .5rem;
@@ -1059,7 +1073,7 @@ footer {
   align-items: center;
   text-align: center;
   padding: .5rem;
-   /* gap: 2rem; */
+  /* gap: 2rem; */
 
 
 }
@@ -1071,7 +1085,7 @@ footer {
   justify-content: center;
 
   text-align: center;
-  
+
 
 }
 
@@ -1086,7 +1100,7 @@ footer {
   font-weight: bold;
   font-size: 12px;
   text-align: center;
-   width: 50px;
+  width: 50px;
 }
 
 
@@ -1132,8 +1146,35 @@ footer {
 
   }
 
+  .app-icons :nth-child(n+29):nth-child(-n+32) {
+    visibility: hidden;
+  }
+
+  .app-icons :nth-child(n+40):nth-child(-n+45) {
+    visibility: hidden;
+  }
+
+  .app-icons :nth-child(n+46):nth-child(-n+48) {
+    visibility: visible;
+  }
+
+  .app-icons :nth-child(n+51):nth-child(-n+58) {
+    visibility: hidden;
+  }
+
+  .app-icons :nth-child(n+59):nth-child(-n+60) {
+    visibility: visible;
+  }
+
+  .app-icons :nth-child(n+61) {
+    visibility: hidden;
+  }
+
+
+
+
   .home {
-    margin-top: 5rem;
+    margin-top: -7rem;
 
   }
 
@@ -1182,6 +1223,7 @@ footer {
 
   }
 
+
   .magazine-container div {
     width: 50%;
     margin: 0;
@@ -1216,6 +1258,26 @@ footer {
     grid-template-rows: repeat(4, 1fr);
     width: 100%;
   }
+
+  .app-icons :nth-child(n+24):nth-child(-n+26) {
+    visibility: hidden;
+  }
+
+  .app-icons :nth-child(n+27):nth-child(-n+28) {
+    visibility: visible;
+  }
+
+  .app-icons :nth-child(n+36) {
+   visibility: hidden;
+    display: none;
+    
+  }
+  
+  }
+  
+  
+
+
 
   .home {
     margin-top: 10rem;
