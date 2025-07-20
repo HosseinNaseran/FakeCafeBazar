@@ -390,7 +390,7 @@ header {
   overflow: hidden;
   max-width: 100%;
   min-height: 700px;
-  text-align: center;
+  /* text-align: center; */
   margin-top: 4.3rem;
   white-space: nowrap;
 }
@@ -480,6 +480,7 @@ header {
   z-index: -15;
   width: 100%;
   position: absolute;
+  top: 40%;
 }
 
 
@@ -599,6 +600,7 @@ header {
   text-align: justify;
   direction: rtl;
   font-size: 11px;
+  
 }
 
 .featureItem h2 {
@@ -1174,7 +1176,7 @@ footer {
 
 
   .home {
-    margin-top: -7rem;
+    margin-top: 0rem;
 
   }
 
@@ -1263,17 +1265,20 @@ footer {
     visibility: hidden;
   }
 
-  .app-icons :nth-child(n+27):nth-child(-n+28) {
+  .app-icons :nth-child(n+27):nth-child(-n+30) {
     visibility: visible;
   }
 
-  .app-icons :nth-child(n+36) {
-   visibility: hidden;
+  .app-icons :nth-child(n+30):nth-child(-n+53){
+   
     display: none;
-    
   }
+ 
+
+   
+
   
-  }
+ 
   
   
 
