@@ -10,9 +10,6 @@ let tabContent2 = document.querySelector(".dropdown-menu2");
 let langBtn = document.querySelector(".bi-three-dots-vertical");
 let langContent = document.querySelector(".dropdown-text");
 
-
-
-
 menuBtn.addEventListener("click", function () {
   menuContent.style.display = "block";
   menuBtn.style.display = "none";
@@ -34,8 +31,6 @@ hiddenItem.addEventListener("click", function () {
   else {
     hiddenContent.style.display = "none"
   }
-
-
 
 })
 tabItem.addEventListener("click", function () {
@@ -73,32 +68,36 @@ slider.forEach(document => {
   let slide = document.querySelectorAll(".app-row-body-content div");
   let slides = document.querySelector(".app-row-body-content");
 
-index = 0;
+  index = 0;
 
-let showSlides = (i) => {
-  if (i < 0) {
-    index = 0;
+  let showSlides = (i) => {
+    if (i <= 0) {
+      index = 0;
+      prev.style.display = "none";
+    }
+    else if (i >= slide.length) {
+      index = 0;
+    }
+    else if (i >= 7) {
+      index = 7;
+       next.style.display = "none";
+    }
+
+    else {
+      index = i;
+       prev.style.display = "flex";
+      next.style.display = "flex";
+    }
+    slides.style.transform = `translatex(-${index * 10}rem)`
+
   }
-  else if (i >= slide.length) {
-    index = 0;
-  }
-  else if (i > 5) {
-    index = 5;
-  }
-
-  else {
-    index = i;
-  }
-  slides.style.transform = `translatex(-${index * 10}rem)`
-}
 
 
-
-prev.addEventListener("click", () => {
-  showSlides(index - 1);
-});
-next.addEventListener("click", () => {
-  showSlides(index + 1);
-});
-showSlides(index);
+  prev.addEventListener("click", () => {
+    showSlides(index - 1);
+  });
+  next.addEventListener("click", () => {
+    showSlides(index + 1);
+  });
+  showSlides(index);
 });
