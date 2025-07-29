@@ -664,6 +664,7 @@ header {
   max-width: 100%;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   
   
 }
@@ -690,9 +691,9 @@ header {
   text-align: center;
   width: 40px;
   z-index:1;
-  position: absolute  ;
-  margin-left: 64.2rem;
-  /* right: 0; */
+  position: absolute;
+  
+  right: 0;
   
 
 }
@@ -720,6 +721,8 @@ header {
   text-align: center;
   width: 40px;
  position: absolute;
+ top: 50%;
+ 
  
 }
 
@@ -1159,10 +1162,8 @@ footer {
     margin-left: 37.9rem;
   }
 
-  .app-row-body-content {
-    grid-template-columns: repeat(7, 1fr);
-    overflow: hidden;
-  }
+ 
+  
 
   .apps {
     padding: 1.5rem;
@@ -1258,10 +1259,7 @@ footer {
     border-bottom: none;
   }
 
-  .app-row-body-content {
-    grid-template-columns: repeat(4, 1fr);
-
-  }
+ 
 
   .magazine-container {
     flex-direction: column;
