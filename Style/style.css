@@ -750,7 +750,7 @@ header {
   grid-template-rows: repeat(1, 1fr);
   transition: 0.5s;
   z-index: 0;
-
+ touch-action: none;
 }
 
 .app-row-body-content div {

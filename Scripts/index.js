@@ -108,15 +108,15 @@ slider.forEach(container => {
   showSlides(index);
 
 
-  slides.addEventListener("mousedown", (e) => {
+  slides.addEventListener("pointerdown", (e) => {
     draging = true
     startM = e.pageX
     startP = current
     e.preventDefault();
   })
-  document.addEventListener("mousemove", (e) => {
+  document.addEventListener("pointermove", (e) => {
     if (!draging) return;
-    let move = e.pageX - startM
+    let move = (e.pageX - startM)*2
     let newX = startP + move
    let maxX = -(slides.scrollWidth - container.offsetWidth);
     if (newX > 0) newX = 0;
@@ -124,7 +124,7 @@ slider.forEach(container => {
     slides.style.transform = `translatex(${newX}px)`;
     current = newX;
   })
-   document.addEventListener("mouseup", function() {
+   document.addEventListener("pointerup", function() {
     draging = false;
   })
 });
