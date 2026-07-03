@@ -766,10 +766,10 @@ header {
   width: 100px;
 }
 
-.app-row-body-content a {
+.app-row-body-content div a {
   text-decoration: none;
   color: black;
-  max-width: 120px;
+  width: 120px;
   border-radius: 8px;
   box-shadow: none;
   display: flex;

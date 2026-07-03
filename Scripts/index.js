@@ -62,13 +62,18 @@ langBtn.addEventListener("click", function () {
 })
 
 let slider = document.querySelectorAll(".app-row-body")
-slider.forEach(document => {
-  let prev = document.querySelector(".move-button-left");
-  let next = document.querySelector(".move-button-right");
-  let slide = document.querySelectorAll(".app-row-body-content div");
-  let slides = document.querySelector(".app-row-body-content");
+slider.forEach(container => {
+  let prev = container.querySelector(".move-button-left");
+  let next = container.querySelector(".move-button-right");
+  let slide = container.querySelectorAll(".app-row-body-content div");
+  let slides = container.querySelector(".app-row-body-content");
 
-  index = 0;
+  let index = 0;
+  let slideWidth = slide[0].offsetWidth
+  let current = 0
+  let draging = false
+  let startM = 0
+  let startP = 0
 
   let showSlides = (i) => {
     if (i <= 0) {
@@ -80,15 +85,16 @@ slider.forEach(document => {
     }
     else if (i >= 7) {
       index = 7;
-       next.style.display = "none";
+      next.style.display = "none";
     }
 
     else {
       index = i;
-       prev.style.display = "flex";
+      prev.style.display = "flex";
       next.style.display = "flex";
     }
-    slides.style.transform = `translatex(-${index * 10}rem)`
+    slides.style.transform = `translatex(-${index * slideWidth}px)`
+    current = -index * slideWidth
 
   }
 
@@ -100,4 +106,28 @@ slider.forEach(document => {
     showSlides(index + 1);
   });
   showSlides(index);
+
+
+  slides.addEventListener("mousedown", (e) => {
+    draging = true
+    startM = e.pageX
+    startP = current
+    e.preventDefault();
+  })
+  document.addEventListener("mousemove", (e) => {
+    if (!draging) return;
+    let move = e.pageX - startM
+    let newX = startP + move
+    let maxX = -(slide.length * slideWidth - container.offsetWidth);
+    if (newX > 0) newX = 0;
+    if (newX < maxX) newX = maxX;
+    slides.style.transform = `translatex(${newX}px)`;
+    current = newX;
+  })
+   document.addEventListener("mouseup", function() {
+    draging = false;
+  })
 });
+
+
+const Alert = " تلاش نکن دانلود نمیشه"
