@@ -118,7 +118,7 @@ slider.forEach(container => {
     if (!draging) return;
     let move = e.pageX - startM
     let newX = startP + move
-    let maxX = -(slide.length * slideWidth - container.offsetWidth);
+   let maxX = -(slides.scrollWidth - container.offsetWidth);
     if (newX > 0) newX = 0;
     if (newX < maxX) newX = maxX;
     slides.style.transform = `translatex(${newX}px)`;
